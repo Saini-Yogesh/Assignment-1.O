@@ -1,0 +1,53 @@
+.statsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 10%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Default: 4 items per row */
+.statItem {
+  width: calc(25% - 40px); /* 4 items per row with gap considered */
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.statItem:hover {
+  transform: translateY(-5px);
+}
+
+.statValue {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0e695a;
+  margin-bottom: 10px;
+}
+
+.statLabel {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Medium screens: 2 items per row */
+@media (max-width: 1200px) {
+  .statItem {
+    width: calc(50% - 40px); /* 2 items per row */
+  }
+}
+
+/* Small screens: 1 item per row */
+@media (max-width: 800px) {
+  .statItem {
+    width: 100%; /* Full width, 1 item per row */
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,92 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px 10%;
+  color: #111;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #0e695a;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: #111;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #ff9800;
+}
+
+.authButtons {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+/* Layered Button Effect */
+.navButton {
+  position: relative;
+  background-color: #0e695a;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 5px 5px 0px #084c41;
+}
+
+/* Bottom block effect */
+.navButton::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar.active .navLinks {
+    display: flex;
+  }
+
+  .navButton {
+    width: 100%;
+    text-align: center;
+  }
+}
